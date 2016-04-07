@@ -29,7 +29,8 @@ class CreateUsersTable extends Migration
             $table->enum('email_notification', ['yes', 'no']);
             $table->enum('user_approved', ['approved', 'blocked', 'pending', 'hold']);
             $table->timestamp('confirmed_at')->nullable();
-            $table->string('alias', 100);
+            $table->string('alias', 100); //first name + last name + random three digit
+            $table->string('hash', 100);
             $table->string('ipAddress', 50);
             $table->rememberToken();
             $table->timestamps();
