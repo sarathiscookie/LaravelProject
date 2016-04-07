@@ -1,2 +1,2 @@
 # marrige
-Website development of a matrimonial using Laravel 5.2 and AngularJs
+Website development of a matrimonial using Laravel 5.2 and VueJS
