@@ -26,19 +26,8 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['backend']], function () {
-    //Login Routes...
-    Route::get('/admin/login','AdminAuth\AuthController@showLoginForm');
-    Route::post('/admin/login','AdminAuth\AuthController@login');
-    Route::get('/admin/password/reset','Adminauth\PasswordController@resetPassword');
-    Route::get('/admin/logout','AdminAuth\AuthController@logout');
-
-    // Registration Routes...
-    Route::get('admin/register', 'AdminAuth\AuthController@showRegistrationForm');
-    Route::post('admin/register', 'AdminAuth\AuthController@register');
-
-    Route::get('/admin/dashboard', ['middleware' => 'auth', 'uses' => 'AdminController@index']);
-
+Route::group(['middleware' => ['web']], function () {
+    //
 });
 
 Route::group(['middleware' => 'web'], function () {
