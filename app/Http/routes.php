@@ -26,12 +26,11 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => ['backend']], function () {
+    Route::get('/admin/dashboard', 'AdminDashboardController@index');
 });
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
     Route::get('/home', 'HomeController@index');
 });
