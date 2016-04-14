@@ -27,7 +27,24 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['backend']], function () {
+    /*
+    |--------------------------------------------------------------------------
+    | Dashboard
+    |--------------------------------------------------------------------------
+    | Functionality of dashboard
+    */
+    /*View admin dashboard page*/
     Route::get('/admin/dashboard', 'AdminDashboardController@index');
+
+    /*
+    |--------------------------------------------------------------------------
+    | Religion
+    |--------------------------------------------------------------------------
+    | Add edit delete functionality of religion
+    */
+    Route::get('/admin/dashboard/religious', 'AdminReligionController@index');
+
+
 });
 
 Route::group(['middleware' => 'web'], function () {
