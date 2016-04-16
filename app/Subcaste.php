@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subcaste extends Model
 {
-    //
+    protected $fillable = ['subcast'];
 }
