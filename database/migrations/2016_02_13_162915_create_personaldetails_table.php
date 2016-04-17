@@ -19,8 +19,8 @@ class CreatePersonaldetailsTable extends Migration
             $table->string('mother_tongue', 25);
             $table->enum('marital_status', ['married', 'unmarried', 'divorced']);
             $table->integer('religion_id')->unsigned();
-            $table->integer('cast_id')->unsigned();
-            $table->integer('subcast_id')->unsigned();
+            $table->integer('caste_id')->unsigned();
+            $table->integer('subcaste_id')->unsigned();
             $table->integer('country_id')->unsigned();
             $table->integer('state_id')->unsigned();
             $table->integer('city_id')->unsigned();
@@ -34,8 +34,8 @@ class CreatePersonaldetailsTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('religion_id')->references('id')->on('religions');
-            $table->foreign('cast_id')->references('id')->on('casts');
-            $table->foreign('subcast_id')->references('id')->on('subcasts');
+            $table->foreign('caste_id')->references('id')->on('castes');
+            $table->foreign('subcaste_id')->references('id')->on('subcastes');
             $table->foreign('country_id')->references('id')->on('countries');
             $table->foreign('state_id')->references('id')->on('states');
             $table->foreign('city_id')->references('id')->on('cities');

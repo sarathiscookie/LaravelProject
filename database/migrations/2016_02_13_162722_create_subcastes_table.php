@@ -14,11 +14,11 @@ class CreateSubcastesTable extends Migration
     {
         Schema::create('subcastes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('cast_id')->unsigned()->index();
-            $table->string('subcast', 50);
+            $table->integer('caste_id')->unsigned()->index();
+            $table->string('subcaste', 50);
             $table->timestamps();
 
-            $table->foreign('cast_id')->references('id')->on('casts');
+            $table->foreign('caste_id')->references('id')->on('castes');
         });
     }
 
