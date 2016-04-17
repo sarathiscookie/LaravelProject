@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubcastsTable extends Migration
+class CreateSubcastesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateSubcastsTable extends Migration
      */
     public function up()
     {
-        Schema::create('subcasts', function (Blueprint $table) {
+        Schema::create('subcastes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cast_id')->unsigned()->index();
             $table->string('subcast', 50);
@@ -29,6 +29,6 @@ class CreateSubcastsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('subcasts');
+        Schema::drop('subcastes');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCastsTable extends Migration
+class CreateCastesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateCastsTable extends Migration
      */
     public function up()
     {
-        Schema::create('casts', function (Blueprint $table) {
+        Schema::create('castes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('religion_id')->unsigned()->index();
             $table->string('cast', 50);
@@ -29,6 +29,6 @@ class CreateCastsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('casts');
+        Schema::drop('castes');
     }
 }
