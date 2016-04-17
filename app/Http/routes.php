@@ -34,7 +34,10 @@ Route::group(['middleware' => ['backend']], function () {
     | Functionality of dashboard
     */
     /*View admin dashboard page*/
-    Route::get('/admin/dashboard', 'AdminDashboardController@index');
+    Route::get('/admin/dashboard', [
+        'as'      => 'dashboard',
+        'uses'    => 'AdminDashboardController@index'
+    ]);
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +45,10 @@ Route::group(['middleware' => ['backend']], function () {
     |--------------------------------------------------------------------------
     | Add edit delete functionality of religion
     */
-    Route::get('/admin/dashboard/religious', 'AdminReligionController@index');
+    Route::get('/admin/dashboard/religion', [
+        'as'      => 'listReligion',
+        'uses'    => 'AdminReligionController@index'
+    ]);
 
 
 });
