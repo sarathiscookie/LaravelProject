@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Caste extends Model
 {
-   protected $fillable = ['cast'];
+   protected $fillable = ['caste'];
 }
