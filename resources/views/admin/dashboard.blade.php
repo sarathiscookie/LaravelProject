@@ -3,7 +3,6 @@
 @section('title', 'Dashboard')
 
 @section('style')
-    <link href="/css/dashboard.css" rel="stylesheet">
 @endsection
 
 @section('content')
