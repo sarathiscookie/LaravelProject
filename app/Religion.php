@@ -12,9 +12,4 @@ class Religion extends Model
     {
         return $this->hasMany('App\Caste');
     }
-
-    public function subcaste()
-    {
-        return $this->hasMany('App\Subcaste');
-    }
 }
