@@ -24,6 +24,7 @@ class CreatePhysicalhabbitsTable extends Migration
             $table->enum('food', ['veg', 'nonveg']);
             $table->enum('smoking', ['occasionally', 'no', 'yes']);
             $table->enum('drinking', ['socialdrinker', 'no', 'yes']);
+            $table->enum('status', ['active', 'disable', 'onhold']);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

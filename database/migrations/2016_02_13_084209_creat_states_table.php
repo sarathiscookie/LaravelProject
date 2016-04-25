@@ -15,6 +15,7 @@ class CreatStatesTable extends Migration
         Schema::create('states', function (Blueprint $table) {
             $table->increments('id');
             $table->string('state', 50);
+            $table->enum('status', ['active', 'disable', 'onhold']);
             $table->timestamps();
         });
     }

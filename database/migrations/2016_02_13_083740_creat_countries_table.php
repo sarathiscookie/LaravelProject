@@ -15,6 +15,7 @@ class CreatCountriesTable extends Migration
         Schema::create('countries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('country', 50);
+            $table->enum('status', ['active', 'disable', 'onhold']);
             $table->timestamps();
         });
     }

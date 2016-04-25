@@ -20,6 +20,7 @@ class CreateProfessionaldetailsTable extends Migration
             $table->enum('employed_in', ['government', 'private', 'business', 'freelancer', 'selfemployed']);
             $table->string('job_description', 225);
             $table->string('amount', 50);
+            $table->enum('status', ['active', 'disable', 'onhold']);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

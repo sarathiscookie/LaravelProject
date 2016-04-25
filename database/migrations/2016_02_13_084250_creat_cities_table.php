@@ -15,6 +15,7 @@ class CreatCitiesTable extends Migration
         Schema::create('cities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('city', 50);
+            $table->enum('status', ['active', 'disable', 'onhold']);
             $table->timestamps();
         });
     }

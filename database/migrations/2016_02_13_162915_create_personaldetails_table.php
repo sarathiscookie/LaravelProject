@@ -30,6 +30,7 @@ class CreatePersonaldetailsTable extends Migration
             $table->enum('family_type', ['joint', 'nuclear']);
             $table->enum('family_values', ['orthodox', 'traditional', 'moderate', 'liberal']);
             $table->text('description');
+            $table->enum('status', ['active', 'disable', 'onhold']);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

@@ -16,6 +16,7 @@ class CreateCastesTable extends Migration
             $table->increments('id');
             $table->integer('religion_id')->unsigned()->index();
             $table->string('caste', 50);
+            $table->enum('status', ['active', 'disable', 'onhold']);
             $table->timestamps();
 
             $table->foreign('religion_id')->references('id')->on('religions');

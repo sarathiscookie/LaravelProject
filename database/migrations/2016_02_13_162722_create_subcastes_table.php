@@ -16,6 +16,7 @@ class CreateSubcastesTable extends Migration
             $table->increments('id');
             $table->integer('caste_id')->unsigned()->index();
             $table->string('subcaste', 50);
+            $table->enum('status', ['active', 'disable', 'onhold']);
             $table->timestamps();
 
             $table->foreign('caste_id')->references('id')->on('castes');
