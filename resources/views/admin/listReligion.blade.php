@@ -23,8 +23,17 @@
                     </div>
 
                     <div class="panel-body">
-                        <button type="button" class="btn btn-info text-right">Create Religion</button>
-                        <br>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="religion">Religion:</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter religion here">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Create Religion</button>
+                                </form>
+                            </div>
+                        </div>
                         <table class="table table-responsive table-bordered table-hover">
                             <thead>
                             <tr>
@@ -42,21 +51,21 @@
                                 <td>1</td>
                                 <td>Buddhist</td>
                                 <td>Active</td>
-                                <td><button type="button" class="btn btn-primary">Edit</button></td>
+                                <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
                             </tr>
                             <tr class="danger">
                                 <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
                                 <td>2</td>
                                 <td>Hindu</td>
                                 <td>Disabled</td>
-                                <td><button type="button" class="btn btn-primary">Edit</button></td>
+                                <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
                             </tr>
                             <tr class="warning">
                                 <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
                                 <td>3</td>
                                 <td>Christian</td>
                                 <td>On hold</td>
-                                <td><button type="button" class="btn btn-primary">Edit</button></td>
+                                <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
                             </tr>
                             </tbody>
                         </table>
@@ -69,4 +78,12 @@
 @endsection
 
 @section('script')
+    <script src="/js/vue.js"></script>
+    <script src="/js/vue-resource.js"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 @endsection
