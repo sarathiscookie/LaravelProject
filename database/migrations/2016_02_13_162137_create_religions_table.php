@@ -15,7 +15,7 @@ class CreateReligionsTable extends Migration
         Schema::create('religions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('religion', 50);
-            $table->enum('status', ['active', 'disable', 'onhold']);
+            $table->enum('status', ['publish', 'unpublish'])->default('unpublish');
             $table->timestamps();
         });
     }

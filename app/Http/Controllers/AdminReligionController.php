@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Religion;
+
 use App\Http\Requests;
 
 class AdminReligionController extends Controller
@@ -15,6 +17,8 @@ class AdminReligionController extends Controller
      */
     public function index()
     {
+        $religions = Religion::all();
+        dd($religions);
         return view('admin.listReligion');
     }
 

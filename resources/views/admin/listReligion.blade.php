@@ -34,41 +34,32 @@
                                 </form>
                             </div>
                         </div>
-                        <table class="table table-responsive table-bordered table-hover">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Id</th>
-                                <th>Religion</th>
-                                <th>Action</th>
-                                <td>Status</td>
-                            </tr>
-                            </thead>
+                        <template id="list-template">
+                            <table class="table table-responsive table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Id</th>
+                                    <th>Religion</th>
+                                    <th>Action</th>
+                                    <td>Status</td>
+                                </tr>
+                                </thead>
 
-                            <tbody>
-                            <tr class="success">
-                                <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
-                                <td>1</td>
-                                <td>Buddhist</td>
-                                <td>Active</td>
-                                <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
-                            </tr>
-                            <tr class="danger">
-                                <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
-                                <td>2</td>
-                                <td>Hindu</td>
-                                <td>Disabled</td>
-                                <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
-                            </tr>
-                            <tr class="warning">
-                                <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
-                                <td>3</td>
-                                <td>Christian</td>
-                                <td>On hold</td>
-                                <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                <tbody>
+                                <tr>
+                                    <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
+                                    <td>1</td>
+                                    <td>Buddhist</td>
+                                    <td><span class="glyphicon glyphicon-ok"></span></td>
+                                    <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </template>
+                        <div id="app">
+                            <data-list list=""></data-list>
+                        </div>
                     </div>
                 </div>
 
@@ -85,5 +76,19 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
+
+        /*class="success" and class="danger"*/
+        Vue.component('data-list',{
+            template: '#list-template',
+            data: function(){
+                return {
+                    list: []
+                };
+            }
+        });
+
+        var vw = new Vue({
+            el:'#app'
+        });
     </script>
 @endsection
