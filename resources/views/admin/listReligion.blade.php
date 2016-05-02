@@ -68,30 +68,6 @@
     </div>
 @endsection
 
-@section('script')
-    <script src="/js/vue.js"></script>
-    <script src="/js/vue-resource.js"></script>
-
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-
-        /*class="success" and class="danger"*/
-        Vue.component('data-list',{
-            template: '#list-template',
-            data: function(){
-                return {
-                    list: []
-                };
-            }
-        });
-
-        var vw = new Vue({
-            el:'body',
-            ready: function(){
-                alert(1);
-            }
-        });
-    </script>
-@endsection
+@push('scripts')
+    <script src="/js/script.js"></script>
+@endpush
