@@ -18,8 +18,7 @@ class AdminReligionController extends Controller
     public function index()
     {
         $religions = Religion::all();
-        dd($religions);
-        return view('admin.listReligion');
+        return view('admin.listReligion', compact('religions'));
     }
 
     /**

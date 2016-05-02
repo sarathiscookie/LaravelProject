@@ -57,9 +57,9 @@
                                 </tbody>
                             </table>
                         </template>
-                        <div id="app">
-                            <data-list list=""></data-list>
-                        </div>
+
+                        <data-list list=""></data-list>
+
                     </div>
                 </div>
 
@@ -88,7 +88,10 @@
         });
 
         var vw = new Vue({
-            el:'#app'
+            el:'body',
+            ready: function(){
+                alert(1);
+            }
         });
     </script>
 @endsection
