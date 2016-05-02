@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatCitiesTable extends Migration
+class CreateStatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class CreatCitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
+        Schema::create('states', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('city', 50);
+            $table->string('state', 50);
             $table->enum('status', ['active', 'disable', 'onhold']);
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ class CreatCitiesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cities');
+        Schema::drop('states');
     }
 }
