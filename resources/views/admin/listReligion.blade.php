@@ -34,32 +34,27 @@
                                 </form>
                             </div>
                         </div>
-                        <template id="list-template">
-                            <table class="table table-responsive table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Id</th>
-                                    <th>Religion</th>
-                                    <th>Action</th>
-                                    <td>Status</td>
-                                </tr>
-                                </thead>
+                        <table class="table table-responsive table-bordered table-hover" id="religionController">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Id</th>
+                                <th>Religion</th>
+                                <th>Action</th>
+                                <td>Status</td>
+                            </tr>
+                            </thead>
 
-                                <tbody>
-                                <tr>
-                                    <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
-                                    <td>1</td>
-                                    <td>Buddhist</td>
-                                    <td><span class="glyphicon glyphicon-ok"></span></td>
-                                    <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </template>
-
-                        <data-list list=""></data-list>
-
+                            <tbody>
+                            <tr v-for="religion in religions">
+                                <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
+                                <td>1</td>
+                                <td>@{{ religion.religion }}</td>
+                                <td><span class="glyphicon glyphicon-ok"></span></td>
+                                <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 

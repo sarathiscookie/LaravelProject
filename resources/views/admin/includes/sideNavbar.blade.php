@@ -46,7 +46,7 @@
             </a>
         </li>
         <li>
-            <a href="/admin/dashboard/religion"><span class="glyphicon glyphicon-align-justify text-muted" aria-hidden="true"></span> Religious Details</a>
+            <a href="/backend/religion"><span class="glyphicon glyphicon-align-justify text-muted" aria-hidden="true"></span> Religious Details</a>
         </li>
         <li>
             <a href=""><span class="glyphicon glyphicon-align-justify text-muted" aria-hidden="true"></span> Country Details</a>
