@@ -14,7 +14,7 @@ class CreatePhysicalhabbitsTable extends Migration
     {
         Schema::create('physicalhabbits', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->index();
             $table->string('height', 10);
             $table->string('weight', 10);
             $table->enum('body_type', ['slim', 'average', 'athletic', 'heavy']);

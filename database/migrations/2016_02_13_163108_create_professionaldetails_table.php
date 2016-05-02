@@ -14,7 +14,7 @@ class CreateProfessionaldetailsTable extends Migration
     {
         Schema::create('professionaldetails', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->index();
             $table->string('education', 50);
             $table->string('occupation', 50);
             $table->enum('employed_in', ['government', 'private', 'business', 'freelancer', 'selfemployed']);

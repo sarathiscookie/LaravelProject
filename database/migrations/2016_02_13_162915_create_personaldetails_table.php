@@ -14,16 +14,16 @@ class CreatePersonaldetailsTable extends Migration
     {
         Schema::create('personaldetails', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->index();
             $table->date('age');
             $table->string('mother_tongue', 25);
             $table->enum('marital_status', ['married', 'unmarried', 'divorced']);
-            $table->integer('religion_id')->unsigned();
-            $table->integer('caste_id')->unsigned();
-            $table->integer('subcaste_id')->unsigned();
-            $table->integer('country_id')->unsigned();
-            $table->integer('state_id')->unsigned();
-            $table->integer('city_id')->unsigned();
+            $table->integer('religion_id')->unsigned()->index();
+            $table->integer('caste_id')->unsigned()->index();
+            $table->integer('subcaste_id')->unsigned()->index();
+            $table->integer('country_id')->unsigned()->index();
+            $table->integer('state_id')->unsigned()->index();
+            $table->integer('city_id')->unsigned()->index();
             $table->string('pincode', 15);
             $table->string('hobbies', 50);
             $table->enum('family_status', ['middleclass', 'upperclass', 'rich']);
