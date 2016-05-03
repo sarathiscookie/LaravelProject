@@ -17,8 +17,7 @@ class AdminReligionController extends Controller
      */
     public function index()
     {
-        $religions = Religion::all();
-        return view('admin.listReligion', compact('religions'));
+        return view('admin.listReligion');
     }
 
     /**
@@ -48,9 +47,9 @@ class AdminReligionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return Religion::select('religion', 'status')->get();
     }
 
     /**

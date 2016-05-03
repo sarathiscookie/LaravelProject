@@ -3,18 +3,30 @@ $(function () {
 })
 
 /*class="success" and class="danger"*/
-Vue.component('data-list',{
-    template: '#list-template',
+Vue.component('tasks', {
+
+    template: '#tasks-template',
+
     data: function(){
-        return {
+        return{
             list: []
         };
+    },
+
+    created: function(){
+        this.fetchTaskList();
+    },
+
+    methods: {
+        fetchTaskList: function(){
+            this.$http.get('/backend/religion/data', function(tasks){
+                this.list = tasks;
+            }.bind(this));
+        }
     }
+
 });
 
-var vw = new Vue({
-    el:'body',
-    ready: function(){
-        alert(1);
-    }
+new Vue({
+   el: 'body'
 });

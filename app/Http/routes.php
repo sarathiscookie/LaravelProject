@@ -45,9 +45,16 @@ Route::group(['middleware' => ['backend']], function () {
     |--------------------------------------------------------------------------
     | Add edit delete functionality of religion
     */
+    /* List page of religion*/
     Route::get('/backend/religion', [
         'as'      => 'listReligion',
         'uses'    => 'AdminReligionController@index'
+    ]);
+
+    /* Data fetch for listing all religion data */
+    Route::get('/backend/religion/data', [
+        'as'      => 'listReligion',
+        'uses'    => 'AdminReligionController@show'
     ]);
 
 
