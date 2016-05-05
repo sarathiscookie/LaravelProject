@@ -20,8 +20,8 @@ Vue.component('tasks', {
     methods: {
         fetchTaskList: function(){
             this.$http.get('/backend/religion/data', function(tasks){
-                this.list = tasks;
-            }.bind(this));
+                this.$set('list', tasks);
+            });
         }
     }
 

@@ -42,16 +42,23 @@
                                     <th>Id</th>
                                     <th>Religion</th>
                                     <th>Action</th>
+                                    <th>Created</th>
                                     <td>Status</td>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                <tr v-for="task in list">
+                                <tr v-for="(index, task) in list | reverse">
                                     <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
-                                    <td>1</td>
-                                    <td>@{{ task.religion }}</td>
-                                    <td><span class="glyphicon glyphicon-ok"></span></td>
+                                    <td>@{{ index + 1 }}</td>
+                                    <td>@{{ task.religion | capitalize }}</td>
+                                    <td v-if="task.status == 'publish'">
+                                        <span class="glyphicon glyphicon-ok"></span>
+                                    </td>
+                                    <td v-else>
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </td>
+                                    <td>@{{ task.created_at }}</td>
                                     <td><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Edit"></span> <span class="glyphicon glyphicon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete"></span></td>
                                 </tr>
                                 </tbody>
