@@ -48,7 +48,7 @@
                                 </thead>
 
                                 <tbody>
-                                <tr v-for="(index, task) in list">
+                                <tr v-for="(index, task) in list | orderBy 'id' -1">
                                     <td><input type="checkbox" id="checkbox" aria-label="checkbox" value="checkbox"></td>
                                     <td>@{{ index + 1 }}</td>
                                     <td>@{{ task.religion | capitalize }}</td>

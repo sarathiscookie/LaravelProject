@@ -49,7 +49,7 @@ class AdminReligionController extends Controller
      */
     public function show()
     {
-        return Religion::select('religion', 'status', 'created_at')->get();
+        return Religion::select('id', 'religion', 'status', 'created_at')->get();
     }
 
     /**
