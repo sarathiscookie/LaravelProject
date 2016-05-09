@@ -1,7 +1,3 @@
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})
-
 /*class="success" and class="danger"*/
 Vue.component('tasks', {
 
@@ -21,6 +17,9 @@ Vue.component('tasks', {
         fetchTaskList: function(){
             this.$http.get('/backend/religion/data', function(tasks){
                 this.$set('list', tasks);
+                Vue.nextTick(function () {
+                    $('[data-toggle="tooltip"]').tooltip()
+                })
             });
         }
     }

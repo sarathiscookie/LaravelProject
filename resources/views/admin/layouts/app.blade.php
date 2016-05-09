@@ -50,9 +50,8 @@
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
 
     <!-- Vue JS -->
-    <script src="/js/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.22/vue.js"></script>
     <script src="/js/vue-resource.js"></script>
-
     @stack('scripts')
 
   </body>
