@@ -8,6 +8,8 @@ use App\Religion;
 
 use App\Http\Requests;
 
+use App\Http\Requests\ReligionRequest;
+
 class AdminReligionController extends Controller
 {
     /**
@@ -36,9 +38,12 @@ class AdminReligionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReligionRequest $request)
     {
-        //
+        $religion = new Religion;
+        $religion->religion = $request->religion;
+        $religion->save();
+        return view('admin.listReligion');
     }
 
     /**

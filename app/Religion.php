@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Religion extends Model
 {
-    protected $fillable = ['religion', 'status'];
+    protected $fillable = ['religion'];
 
     public function caste()
     {

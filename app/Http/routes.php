@@ -57,6 +57,11 @@ Route::group(['middleware' => ['backend']], function () {
         'uses'    => 'AdminReligionController@show'
     ]);
 
+    /* Save religion data */
+    Route::post('/backend/religion', [
+        'as'      => 'listReligion',
+        'uses'    => 'AdminReligionController@store'
+    ]);
 
 });
 

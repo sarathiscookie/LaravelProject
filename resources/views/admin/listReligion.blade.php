@@ -25,10 +25,11 @@
                     <div class="panel-body">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form class="form-inline">
+                                <form action="#" @submit.prevent="addNewReligion" method="POST" class="form-inline">
+                                    {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="religion">Religion:</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter religion here">
+                                        <input v-model="newReligion.religion" type="text" class="form-control" id="religion" placeholder="Enter religion here" name="religion">
                                     </div>
                                     <button type="submit" class="btn btn-default">Create Religion</button>
                                 </form>
