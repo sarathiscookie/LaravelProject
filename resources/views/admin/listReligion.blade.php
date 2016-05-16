@@ -29,7 +29,7 @@
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="religion">Religion:</label>
-                                        <input v-model="newReligion.religion" type="text" class="form-control" id="religion" placeholder="Enter religion here" name="religion">
+                                        <input v-model="newReligion.religion" type="text" class="form-control" id="religion" placeholder="Enter religion here" name="religion" autocomplete="off">
                                     </div>
                                     <button type="submit" class="btn btn-default">Create Religion</button>
                                 </form>
