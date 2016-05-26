@@ -63,6 +63,12 @@ Route::group(['middleware' => ['backend']], function () {
         'uses'    => 'AdminReligionController@store'
     ]);
 
+    /* Delete religion */
+    Route::delete('/backend/religion/{id}', [
+        'as'      => 'deleteReligion',
+        'uses'    => 'AdminReligionController@destroy'
+    ]);
+
 });
 
 Route::group(['middleware' => 'web'], function () {

@@ -88,6 +88,7 @@ class AdminReligionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Religion::where('id', $id)->delete();
+        response()->json(['deleted' => 'success']);
     }
 }
