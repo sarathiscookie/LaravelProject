@@ -25,6 +25,7 @@ var vm = new Vue({
                 })
             });
         },
+
         addNewReligion: function(){
             //religion input
             var religion = this.newReligion
@@ -37,6 +38,7 @@ var vm = new Vue({
             // show data with out refresh the whole page
             this.fetchReligion()
         },
+        
         removeReligion: function(id){
             var confirmDelete = confirm(" Are you sure, you want to delete this religion? ")
             if(confirmDelete) this.$http.delete('/backend/religion/' + id)
