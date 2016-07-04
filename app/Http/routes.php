@@ -26,52 +26,49 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['backend']], function () {
-    /*
-    |--------------------------------------------------------------------------
-    | Dashboard
-    |--------------------------------------------------------------------------
-    | Functionality of dashboard
-    */
-    /*View admin dashboard page*/
-    Route::get('/backend/dashboard', [
-        'as'      => 'dashboard',
-        'uses'    => 'AdminDashboardController@index'
-    ]);
+/*
+|--------------------------------------------------------------------------
+| Dashboard
+|--------------------------------------------------------------------------
+| Functionality of dashboard
+*/
+/*View admin dashboard page*/
+Route::get('/backend/dashboard', [
+    'as'      => 'dashboard',
+    'uses'    => 'AdminDashboardController@index'
+]);
 
-    /*
-    |--------------------------------------------------------------------------
-    | Religion
-    |--------------------------------------------------------------------------
-    | Add edit delete functionality of religion
-    */
-    /* List page of religion*/
-    Route::get('/backend/religion', [
-        'as'      => 'listReligion',
-        'uses'    => 'AdminReligionController@index'
-    ]);
+/*
+|--------------------------------------------------------------------------
+| Religion
+|--------------------------------------------------------------------------
+| Add edit delete functionality of religion
+*/
+/* List page of religion*/
+Route::get('/backend/religion', [
+    'as'      => 'listReligion',
+    'uses'    => 'AdminReligionController@index'
+]);
 
-    /* Data fetch for listing all religion data */
-    Route::get('/backend/religion/data', [
-        'as'      => 'listReligion',
-        'uses'    => 'AdminReligionController@show'
-    ]);
+/* Data fetch for listing all religion data */
+Route::get('/backend/religion/data', [
+    'as'      => 'listReligion',
+    'uses'    => 'AdminReligionController@show'
+]);
 
-    /* Save religion data */
-    Route::post('/backend/religion', [
-        'as'      => 'listReligion',
-        'uses'    => 'AdminReligionController@store'
-    ]);
+/* Save religion data */
+Route::post('/backend/religion', [
+    'as'      => 'listReligion',
+    'uses'    => 'AdminReligionController@store'
+]);
 
-    /* Delete religion */
-    Route::delete('/backend/religion/{id}', [
-        'as'      => 'deleteReligion',
-        'uses'    => 'AdminReligionController@destroy'
-    ]);
+/* Delete religion */
+Route::delete('/backend/religion/{id}', [
+    'as'      => 'deleteReligion',
+    'uses'    => 'AdminReligionController@destroy'
+]);
 
-});
 
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-    Route::get('/home', 'HomeController@index');
-});
+Route::auth();
+Route::get('/home', 'HomeController@index');
+
