@@ -12,7 +12,7 @@
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <section class="content-header">
                     <ol class="breadcrumb">
-                        <li><a href="/admin/dashboard" class="active">Dashboard</a></li>
+                        <li><a href="/backend/dashboard" class="active">Dashboard</a></li>
                         <li>Religion</li>
                     </ol>
                 </section>
