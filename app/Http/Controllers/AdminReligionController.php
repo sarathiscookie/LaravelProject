@@ -19,7 +19,7 @@ class AdminReligionController extends Controller
      */
     public function index()
     {
-        return view('admin.listReligion');
+        return view('admin.religions');
     }
 
     /**
@@ -43,7 +43,7 @@ class AdminReligionController extends Controller
         $religion = new Religion;
         $religion->religion = $request->religion;
         $religion->save();
-        return view('admin.listReligion');
+        return view('admin.religions');
     }
 
     /**

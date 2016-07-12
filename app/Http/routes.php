@@ -45,25 +45,25 @@ Route::get('/backend/dashboard', [
 | Add edit delete functionality of religion
 */
 /* List page of religion*/
-Route::get('/backend/religion', [
-    'as'      => 'listReligion',
+Route::get('/backend/religions', [
+    'as'      => 'religionsListPage',
     'uses'    => 'AdminReligionController@index'
 ]);
 
 /* Data fetch for listing all religion data */
-Route::get('/backend/religion/data', [
+Route::get('/backend/religions/list', [
     'as'      => 'listReligion',
     'uses'    => 'AdminReligionController@show'
 ]);
 
 /* Save religion data */
-Route::post('/backend/religion', [
-    'as'      => 'listReligion',
+Route::post('/backend/religions', [
+    'as'      => 'storeReligion',
     'uses'    => 'AdminReligionController@store'
 ]);
 
 /* Delete religion */
-Route::delete('/backend/religion/{id}', [
+Route::delete('/backend/religions/{id}', [
     'as'      => 'deleteReligion',
     'uses'    => 'AdminReligionController@destroy'
 ]);

@@ -18,7 +18,7 @@ var vm = new Vue({
 
     methods: {
         fetchReligion: function(){
-            this.$http.get('/backend/religion/data', function(data){
+            this.$http.get('/backend/religions/list', function(data){
                 this.$set('religions', data);
                 Vue.nextTick(function () {
                     $('[data-toggle="tooltip"]').tooltip()
@@ -33,7 +33,7 @@ var vm = new Vue({
             //clear form input
             this.newReligion = {religion: ''}
 
-            this.$http.post('/backend/religion', religion)
+            this.$http.post('/backend/religions', religion)
 
             // show data with out refresh the whole page
             this.fetchReligion()
@@ -41,7 +41,7 @@ var vm = new Vue({
         
         removeReligion: function(id){
             var confirmDelete = confirm(" Are you sure, you want to delete this religion? ")
-            if(confirmDelete) this.$http.delete('/backend/religion/' + id)
+            if(confirmDelete) this.$http.delete('/backend/religions/' + id)
             this.fetchReligion()
         }
     },
