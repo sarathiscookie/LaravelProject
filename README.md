@@ -1,1 +1,1 @@
-Website development of a matrimonial using Laravel 5.2 and VueJS
+A matrimonial application developed using Laravel 5.2 and VueJS
